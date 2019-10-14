@@ -109,29 +109,29 @@ private:
     }
     bool esNumero(string x){
         for(auto d : numeros){
-            if(x[0] == d){
+            if(x[0] == d or x[1]==d){
                 return true;
             }
         }
         return false;
     }
 
-    unt Num(string const numbero){
+    float Num(string const& numbero){
         if(esNumero(numbero)){
-            unt y;
+            float y;
             stringstream yes(numbero);
             yes >> y;
             return y;
         }
         else{
-            unt x;
+            float x;
             cout<<"Ingrese valor para la variable \""<<numbero<<"\": ";
             cin>>x;
             return x;
         }
     }
 
-    string toString(unt numbero){
+    string toString(float numbero){
         stringstream ss;
         ss << numbero;
         string str = ss.str();
